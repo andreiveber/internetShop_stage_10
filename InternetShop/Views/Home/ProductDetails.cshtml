@@ -1,0 +1,38 @@
+﻿@model InternetShop.Models.Product
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-primary">
+            <h2>@Model.Name</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Информация о товаре</h5>
+                <p class="card-text">
+                    <strong>ID:</strong> @Model.Id<br />
+                    <strong>Название:</strong> @Model.Name<br />
+                    <strong>Цена:</strong> <span class="text-primary">@Model.Price.ToString("C")</span><br />
+                    <strong>Описание:</strong> @Model.Description
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Действия</h5>
+                <a href="/Home/Products" class="btn btn-primary">Вернуться к товарам</a>
+                <a href="#" class="btn btn-success">Добавить в корзину</a>
+            </div>
+        </div>
+    </div>
+</div>

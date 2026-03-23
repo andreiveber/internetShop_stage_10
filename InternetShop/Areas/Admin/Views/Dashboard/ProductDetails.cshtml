@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_Layout";
+    int productId = ViewBag.ProductId;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning">
+                <h2>Информация о товаре</h2>
+                <p>Просмотр деталей товара #{@productId}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5>Товар #{@productId}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        <p><strong>Детальная страница товара.</strong></p>
+                        <p>Полная информация о товаре с ID = @productId</p>
+                    </div>
+                    
+                    <dl class="row">
+                        <dt class="col-sm-3">ID товара:</dt>
+                        <dd class="col-sm-9">@productId</dd>
+                        
+                        <dt class="col-sm-3">Название:</dt>
+                        <dd class="col-sm-9">Товар #@productId</dd>
+                        
+                        <dt class="col-sm-3">Цена:</dt>
+                        <dd class="col-sm-9">от 1000 ₽</dd>
+                        
+                        <dt class="col-sm-3">Описание:</dt>
+                        <dd class="col-sm-9">Подробное описание товара</dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <a href="/admin/dashboard" class="btn btn-secondary">← Назад</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

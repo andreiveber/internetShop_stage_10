@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "_Layout";
+    var stats = ViewData.Model;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-info">
+                <h2>Статистика магазина</h2>
+                <p>Общая информация о работе интернет-магазина</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5>Основные показатели</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Всего товаров:</strong>
+                            <span>5</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Всего заказов:</strong>
+                            <span>128</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Общая выручка:</strong>
+                            <span>125 000 ₽</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <strong>Активных пользователей:</strong>
+                            <span>42</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5>Информация</h5>
+                </div>
+                <div class="card-body">
+                    <p>Данные обновлены: @DateTime.Now.ToString("dd.MM.yyyy HH:mm")</p>
+                    <p>Средний чек: 4 000 ₽</p>
+                    <p>Популярная категория: Игры для PS5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-12">
+            <a href="/admin/dashboard" class="btn btn-secondary">← Вернуться в панель</a>
+        </div>
+    </div>
+</div>

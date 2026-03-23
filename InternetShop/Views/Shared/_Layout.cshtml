@@ -350,31 +350,33 @@
 
         <div class="collapse navbar-collapse" id="navbarsExample">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" href="/">Главная</a>
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Категории
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Игры для PS5</a></li>
-                        <li><a class="dropdown-item" href="#">Игры для Xbox</a></li>
-                        <li><a class="dropdown-item" href="#">Игровые консоли</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Аксессуары</a></li>
-                    </ul>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Products" ? "active" : "")" href="/Home/Products">Товары</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Contact" ? "active" : "")" href="/Home/Contact">Контакты</a>
-                </li>
-            </ul>
-        </div>
+        <li class="nav-item">
+        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" href="/">Главная</a>
+        </li>
+    
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Категории
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Игры для PS5</a></li>
+            <li><a class="dropdown-item" href="#">Игры для Xbox</a></li>
+            <li><a class="dropdown-item" href="#">Игровые консоли</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Аксессуары</a></li>
+        </ul>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Products" ? "active" : "")" href="/Home/Products">Товары</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Contact" ? "active" : "")" href="/Home/Contact">Контакты</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/dashboard">Админка</a>
+    </li>
+    </ul>
     </div>
 </nav>
 
