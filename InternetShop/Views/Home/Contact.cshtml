@@ -1,5 +1,13 @@
-﻿@{
+﻿@model InternetShop.ViewModels.ContactViewModel
+@{
     Layout = "_Layout";
+}
+
+@if (!string.IsNullOrEmpty(Model.UserName))
+{
+    <div class="alert alert-success">
+        Привет, @Model.UserName! Спасибо, что посетили наш магазин.
+    </div>
 }
 
 <div class="row">
@@ -10,16 +18,16 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">Наш адрес:</h5>
-                <p class="card-text">г. Челябинск, ул. Воровского, 6 (ТРК «Урал» 3 этаж)</p>
+                <p class="card-text">@Model.Address</p>
                 
                 <h5 class="card-title mt-4">Телефон:</h5>
-                <p class="card-text">8 (904) 933-99-11</p>
+                <p class="card-text">@Model.Phone</p>
                 
                 <h5 class="card-title mt-4">Email:</h5>
-                <p class="card-text">sotcomm174@mail.ru</p>
+                <p class="card-text">@Model.Email</p>
                 
                 <h5 class="card-title mt-4">Часы работы:</h5>
-                <p class="card-text">Время работы: с 10-00 до 22-00</p>
+                <p class="card-text">Время работы: @Model.WorkingHours</p>
             </div>
         </div>
     </div>

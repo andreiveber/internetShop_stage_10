@@ -1,3 +1,5 @@
+using InternetShop.Services;
+
 namespace InternetShop
 {
     public class Program
@@ -7,6 +9,8 @@ namespace InternetShop
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddSingleton<ProductService>();
 
             var app = builder.Build();
 

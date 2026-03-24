@@ -1,14 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using InternetShop.Models;
+using InternetShop.Services;
+using InternetShop.ViewModels;
 
 namespace InternetShop.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ProductService _productService;
+
+        public HomeController(ProductService productService)
+        {
+            _productService = productService;
+        }
+
         public IActionResult Index()
         {
             ViewData["Title"] = "Главная";
-            return View();
+            var viewModel = _productService.GetHomeViewModel();
+            return View(viewModel);
         }
 
         [Route("catalog")]
@@ -16,16 +26,7 @@ namespace InternetShop.Controllers
         public IActionResult Products()
         {
             ViewData["Title"] = "Товары";
-
-            var products = new List<Product>
-            {
-                new Product { Id = 1, Name = "Assassin's Creed : Shadows", Price = 4990M, Description = "Игра для PS5" },
-                new Product { Id = 2, Name = "Astro bot", Price = 4590M, Description = "Игра для PS5" },
-                new Product { Id = 3, Name = "Cyberpunk 2077: Ultimate Edition", Price = 3990M, Description = "Игра для PS5" },
-                new Product { Id = 4, Name = "Sony Playstation 5 Pro", Price = 70690M, Description = "Игровая приставка" },
-                new Product { Id = 5, Name = "Xbox Series X", Price = 59790M, Description = "Игровая консоль" }
-            };
-
+            var products = _productService.GetAllProducts();
             return View(products);
         }
 
@@ -33,17 +34,7 @@ namespace InternetShop.Controllers
         public IActionResult ProductDetails(int id)
         {
             ViewData["Title"] = $"Товар #{id}";
-
-            var products = new List<Product>
-            {
-                new Product { Id = 1, Name = "Assassin's Creed : Shadows", Price = 4990M, Description = "Игра для PS5" },
-                new Product { Id = 2, Name = "Astro bot", Price = 4590M, Description = "Игра для PS5" },
-                new Product { Id = 3, Name = "Cyberpunk 2077: Ultimate Edition", Price = 3990M, Description = "Игра для PS5" },
-                new Product { Id = 4, Name = "Sony Playstation 5 Pro", Price = 70690M, Description = "Игровая приставка" },
-                new Product { Id = 5, Name = "Xbox Series X", Price = 59790M, Description = "Игровая консоль" }
-            };
-
-            var product = products.FirstOrDefault(p => p.Id == id);
+            var product = _productService.GetProductById(id);
 
             if (product == null)
             {
@@ -59,8 +50,8 @@ namespace InternetShop.Controllers
         public IActionResult Contact(string name = null)
         {
             ViewData["Title"] = "Контакты";
-            ViewBag.UserName = name;
-            return View();
+            var viewModel = _productService.GetContactViewModel(name);
+            return View(viewModel);
         }
 
         [Route("about")]

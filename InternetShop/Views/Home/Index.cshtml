@@ -1,11 +1,12 @@
-﻿@{
+﻿@model InternetShop.ViewModels.HomeViewModel
+@{
     Layout = "_Layout";
 }
 
 <div class="row">
     <div class="col-12">
         <div class="alert alert-primary" role="alert">
-            <h4 class="alert-heading">Добро пожаловать в наш специализированный игровой интернет-магазин SOTCOMM</h4>
+            <h4 class="alert-heading">@Model.WelcomeMessage</h4>
             <p>ВАШ ПРОВОДНИК В ВИРТУАЛЬНЫЙ МИР</p>
         </div>
     </div>
@@ -97,8 +98,7 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">
-                    При покупке любого товара от 500р идёт целых 3 ПОДАРКА НА ВАШ ВЫБОР,
-                    один из которых наушники Monster Beats!
+                    @Model.SpecialOffer, один из которых наушники Monster Beats!
                 </h5>
                 <a href="/Home/Products" class="btn btn-primary">Перейти к покупкам</a>
             </div>
