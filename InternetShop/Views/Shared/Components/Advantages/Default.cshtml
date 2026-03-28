@@ -1,0 +1,18 @@
+﻿@model List<string>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <h3>Почему выбирают нас?</h3>
+    </div>
+    
+    @foreach (var advantage in Model)
+    {
+        <div class="col-md-3 col-sm-6 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">@advantage</h5>
+                </div>
+            </div>
+        </div>
+    }
+</div>

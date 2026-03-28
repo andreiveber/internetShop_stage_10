@@ -12,47 +12,7 @@
         </div>
     </div>
 
-    <div class="row mt-4">
-        <div class="col-md-3 mb-3">
-            <div class="card text-white bg-primary">
-                <div class="card-body">
-                    <h5 class="card-title">Товары</h5>
-                    <p class="card-text display-4">5</p>
-                    <a href="/Home/Products" class="text-white">Управление →</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-3 mb-3">
-            <div class="card text-white bg-success">
-                <div class="card-body">
-                    <h5 class="card-title">Заказы</h5>
-                    <p class="card-text display-4">128</p>
-                    <a href="/admin/dashboard/stats" class="text-white">Подробнее →</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-3 mb-3">
-            <div class="card text-white bg-info">
-                <div class="card-body">
-                    <h5 class="card-title">Выручка</h5>
-                    <p class="card-text display-4">125 000 ₽</p>
-                    <a href="/admin/dashboard/stats" class="text-white">Статистика →</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-3 mb-3">
-            <div class="card text-white bg-warning">
-                <div class="card-body">
-                    <h5 class="card-title">Пользователи</h5>
-                    <p class="card-text display-4">42</p>
-                    <span class="text-white">Активных</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    @await Component.InvokeAsync("AdminStats")
     
     <div class="row mt-4">
         <div class="col-12">

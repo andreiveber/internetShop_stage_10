@@ -1,0 +1,17 @@
+﻿@model dynamic
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                @Model.Title
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">
+                    @Model.Description
+                </h5>
+                <a href="@Model.ButtonUrl" class="btn btn-primary">@Model.ButtonText</a>
+            </div>
+        </div>
+    </div>
+</div>
