@@ -50,6 +50,15 @@
     </button>
 </div>
 
-@await Component.InvokeAsync("Advantages")
+<div class="row mt-4">
+    <div class="col-12">
+        <h3 class="advantages-title">Почему выбирают нас?</h3>
+    </div>
+    
+    <advantage title="Более 10000 товаров" />
+    <advantage title="Быстро, качественно и с гарантией активируем подписки PlayStation Plus, Xbox Game Pass" />
+    <advantage title="100% гарантия возврата денег" />
+    <advantage title="Реальная экономия - скидки до 80%" />
+</div>
 
 @await Component.InvokeAsync("SpecialOffer")

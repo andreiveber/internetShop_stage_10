@@ -1,5 +1,4 @@
 ﻿@model List<InternetShop.Models.Product>
-
 @{
     Layout = "_Layout";
 }
@@ -47,35 +46,34 @@
                             <th scope="col">Название</th>
                             <th scope="col">Цена</th>
                             <th scope="col">Описание</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var product in filteredProducts)
-                        {
-                            <tr>
-                                <td>@product.Id</td>
-                                <td><strong>@product.Name</strong></td>
-                                <td class="text-primary fw-bold">@product.Price.ToString("C")</td>
-                                <td>@product.Description</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="alert alert-info">
-                <strong>Всего товаров:</strong> @Model.Count
-                @if (!string.IsNullOrEmpty(Context.Request.Query["search"]))
-                {
-                    <span> | <strong>Найдено:</strong> @filteredProducts.Count</span>
-                }
-            </div>
-        }
+                        </thead>
+                        <tbody>
+                            @foreach (var product in filteredProducts)
+                            {
+                                <tr>
+                                    <td>@product.Id</td>
+                                    <td><strong>@product.Name</strong></td>
+                                    <td><price value="@product.Price" bold="true" color="primary" /></td>
+                                    <td>@product.Description</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Всего товаров:</strong> @Model.Count
+                    @if (!string.IsNullOrEmpty(Context.Request.Query["search"]))
+                    {
+                        <span> | <strong>Найдено:</strong> @filteredProducts.Count</span>
+                    }
+                </div>
+            }
         else
-        {
-            <div class="alert alert-danger">
-                <strong>Товары не найдены.</strong> Попробуйте изменить параметры поиска.
-            </div>
-        }
+            {
+                <div class="alert alert-danger">
+                    <strong>Товары не найдены.</strong> Попробуйте изменить параметры поиска.
+                </div>
+            }
+        </div>
     </div>
-</div>

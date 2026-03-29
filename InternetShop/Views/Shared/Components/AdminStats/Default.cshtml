@@ -1,43 +1,8 @@
 ﻿@model dynamic
 
 <div class="row mt-4">
-    <div class="col-md-3 mb-3">
-        <div class="card text-white bg-primary">
-            <div class="card-body">
-                <h5 class="card-title">Товары</h5>
-                <p class="card-text display-4">@Model.TotalProducts</p>
-                <a href="/Home/Products" class="text-white">Управление →</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-md-3 mb-3">
-        <div class="card text-white bg-success">
-            <div class="card-body">
-                <h5 class="card-title">Заказы</h5>
-                <p class="card-text display-4">@Model.TotalOrders</p>
-                <a href="/admin/dashboard/stats" class="text-white">Подробнее →</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-md-3 mb-3">
-        <div class="card text-white bg-info">
-            <div class="card-body">
-                <h5 class="card-title">Выручка</h5>
-                <p class="card-text display-4">@Model.TotalRevenue.ToString("N0") ₽</p>
-                <a href="/admin/dashboard/stats" class="text-white">Статистика →</a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="col-md-3 mb-3">
-        <div class="card text-white bg-warning">
-            <div class="card-body">
-                <h5 class="card-title">Пользователи</h5>
-                <p class="card-text display-4">@Model.ActiveUsers</p>
-                <span class="text-white">Активных</span>
-            </div>
-        </div>
-    </div>
+    <statcard title="Товары" value="@Model.TotalProducts" color="primary" url="/Home/Products" linktext="Управление" />
+    <statcard title="Заказы" value="@Model.TotalOrders" color="success" url="/admin/dashboard/stats" linktext="Подробнее" />
+    <statcard title="Выручка" value="@Model.TotalRevenue.ToString("N0") ₽" color="info" url="/admin/dashboard/stats" linktext="Статистика" />
+    <statcard title="Пользователи" value="@Model.ActiveUsers" color="warning" linktext="Активных" />
 </div>
