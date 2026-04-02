@@ -38,7 +38,7 @@ namespace InternetShop.Controllers
 
             if (product == null)
             {
-                return NotFound();
+                return RedirectToAction("Error404", "Home");
             }
 
             return View(product);
@@ -59,6 +59,13 @@ namespace InternetShop.Controllers
         {
             ViewData["Title"] = "О нас";
             return View();
+        }
+
+        [Route("error404")]
+        public IActionResult Error404()
+        {
+            ViewData["Title"] = "Страница не найдена";
+            return View("Error");
         }
     }
 }

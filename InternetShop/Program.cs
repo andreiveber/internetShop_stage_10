@@ -1,4 +1,5 @@
 using InternetShop.Services;
+using InternetShop.Filters;
 
 namespace InternetShop
 {
@@ -9,14 +10,14 @@ namespace InternetShop
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddControllersWithViews();
-
             builder.Services.AddSingleton<ProductService>();
+            builder.Services.AddScoped<ProductExistsFilter>();
 
             var app = builder.Build();
 
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error404");
                 app.UseHsts();
             }
 
